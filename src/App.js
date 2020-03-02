@@ -1,27 +1,20 @@
 import React, { Component } from "react";
 import "./App.css";
-import NavigationBar from "./components/navigationBar";
-import MainContent from "./components/mainContent";
-import MainFooter from "./components/mainFooter";
-import SearchBox from "./components/searchBox";
 import { Layout } from "antd";
-
-const { Header, Content, Footer, Sider } = Layout;
+import PageHeader from "./components/pageHeader/pageHeader";
+import PageContent from "./components/pageContent/pageContent";
+import PageFooter from "./components/pageFooter/pageFooter";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Layout className="layout">
-          <Header className="app-header" theme="light">
-            <NavigationBar />
-          </Header>
-          <Content style={{ padding: '0 0' }}>
-            <MainContent />
-          </Content>
-          <Footer style={{ textAlign: 'center' }}>
-            <MainFooter />
-          </Footer>
+          <PageHeader />
+          <div className="site-content">
+            <PageContent className="site-content" />
+          </div>
+          <PageFooter />
         </Layout>
       </div>
     );
@@ -29,13 +22,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
