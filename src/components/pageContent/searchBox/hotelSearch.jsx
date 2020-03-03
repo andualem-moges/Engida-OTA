@@ -17,7 +17,11 @@ class HotelSearch extends Component {
             lg={10}
             xl={10}
           >
-            <Input placeholder="Basic usage" style={{ width: "100%" }} />
+            <Input
+              className="search-text-input"
+              placeholder="Basic usage"
+              style={{ width: "100%" }}
+            />
           </Col>
           <Col
             className="search-inputs"
@@ -27,10 +31,18 @@ class HotelSearch extends Component {
             lg={10}
             xl={10}
           >
-            <RangePicker placeholder="Basic usage" style={{ width: "100%" }} />
+            <RangePicker
+              className="search-text-input"
+              placeholder="Basic usage"
+              style={{ width: "100%" }}
+            />
           </Col>
           <Col className="search-inputs" xs={21} sm={21} md={4} lg={4} xl={3}>
-            <Button type="primary" style={{ width: "100%" }}>
+            <Button
+              className="search-button"
+              type="primary"
+              style={{ width: "100%" }}
+            >
               Search
             </Button>
           </Col>
