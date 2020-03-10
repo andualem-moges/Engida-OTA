@@ -43,36 +43,58 @@ const mapStyles = {
 };
 
 export class SimpleMap extends Component {
-  state = {
-    locations: []
-  };
-  constructor(props) {
-    super(props);
+  handleLocations() {
+    const location = this.props.lists.map(x => {
+      return {
+        lat: parseFloat(x.location.split(",")[0]),
+        lng: parseFloat(x.location.split(",")[1])
+      };
+    });
+    console.log(location);
+    return location;
   }
+  // componentDidMount() {
+  //   this.setState({ locations: this.props.lists.map(x => x.location) });
+  //   console.log("MAP=======" + this.state.locations);
+  // }
 
-  componentDidUpdate(previousProps, previousState) {
-    if (previousProps.lists !== this.props.lists) {
-      this.setState({ location: this.props.lists.map(x => x.location) });
-      console.log("MAP=======" + this.props.lists.map(x => x.location));
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   // You don't have to do this check first, but it can help prevent an unneeded render
+  //   if (nextProps.startTime !== this.state.startTime) {
+  //     this.setState({ locations: this.props.lists.map(x => x.location) });
+  //     console.log("MAP=======" + this.state.locations);
+  //   }
+  // }
+
+  // getCenter() {
+  //   const l = this.handleLocations()[0].lat;
+  //   const g = this.handleLocations()[0].lat;
+  //   const x = {
+  //     lat: 0,
+  //     lng: 0
+  //   };
+  //   x.lat = l;
+  //   x.lng = g;
+  //   return x;
+  // }
 
   render() {
     return (
       <Map
         google={this.props.google}
-        zoom={14}
+        zoom={15}
         style={mapStyles}
-        initialCenter={{
-          lat: -1.2884,
-          lng: 36.8233
-        }}
+        // initialCenter={this.handleLocations()[0]}
+        initialCenter={{ lat: 8.561886, lng: 39.282356 }}
+        // initialCenter={{ lat: this.getCenter().lat, lng: this.getCenter().lng }}
       >
-        <Marker
-          onClick={this.onMarkerClick}
-          name={"Current location"}
-          // position={{ lat: 37.778519, lng: -122.40564 }}
-        />
+        {this.handleLocations().map(x => (
+          <Marker
+            key={x.lat}
+            name={"Current location"}
+            position={{ lat: x.lat, lng: x.lng }}
+          />
+        ))}
       </Map>
     );
   }
