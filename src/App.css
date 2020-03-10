@@ -43,10 +43,12 @@
   text-align: center;
   width: 80%;
   margin: auto;
+  border: solid 1px #17b978;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .site-content {
-  margin: 65px 0px;
+  margin: 45px 0px;
 }
 
 .search-title {
@@ -70,6 +72,7 @@
 
 .result-list {
   margin-top: 20px;
+  background-color: white;
 }
 
 .result img {
@@ -81,8 +84,8 @@
 .result {
   background-color: white;
   height: 200px;
-  border: solid 1px #17b978;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* border: solid 1px #17b978; */
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   text-align: start;
   margin-bottom: 0px;
 }
@@ -98,11 +101,11 @@
 }
 
 .search-button {
-  height: 50px;
+  height: 150px;
   border: none;
 }
 
 .search-text-input {
-  height: 50px;
-  border: none;
+  height: 45px;
+  border: solid 1px yellow;
 }

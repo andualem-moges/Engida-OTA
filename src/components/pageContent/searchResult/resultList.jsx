@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import SearchResults from "./searchResults";
 
-import { List, Avatar } from "antd";
-import { MessageOutlined, LikeOutlined, StarOutlined } from "@ant-design/icons";
+import { List } from "antd";
+// import { MessageOutlined, LikeOutlined, StarOutlined } from "@ant-design/icons";
 
 const listData = [];
 for (let i = 0; i < 23; i++) {
@@ -17,12 +17,12 @@ for (let i = 0; i < 23; i++) {
   });
 }
 
-const IconText = ({ icon, text }) => (
-  <span>
-    {React.createElement(icon, { style: { marginRight: 8 } })}
-    {text}
-  </span>
-);
+// const IconText = ({ icon, text }) => (
+//   <span>
+//     {React.createElement(icon, { style: { marginRight: 8 } })}
+//     {text}
+//   </span>
+// );
 
 class ResultList extends Component {
   state = {};
@@ -38,10 +38,10 @@ class ResultList extends Component {
           },
           pageSize: 10
         }}
-        dataSource={listData}
+        dataSource={this.props.lists}
         renderItem={item => (
-          <List.Item key={item.title} style={{ padding: "5px 5px" }}>
-            <SearchResults />
+          <List.Item key={item.name} style={{ padding: "20px 10px" }}>
+            <SearchResults lists={item} />
           </List.Item>
         )}
       />

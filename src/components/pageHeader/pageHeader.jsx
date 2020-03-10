@@ -8,11 +8,11 @@ class PageHeader extends Component {
   render() {
     return (
       <Layout>
-        <Header style={{ backgroundColor: "white", float: "right" }}>
+        <Header style={{ backgroundColor: "dark", float: "right" }}>
           <div className="logo" />
           <div className="nav-menu">
             <Menu
-              theme="light"
+              theme="dark"
               mode="horizontal"
               defaultSelectedKeys={["2"]}
               style={{ lineHeight: "64px" }}

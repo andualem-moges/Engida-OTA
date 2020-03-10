@@ -18,7 +18,7 @@ class SearchBox extends Component {
           {/* <Card bordered={false}> */}
           <Tabs defaultActiveKey="1" onChange={callback}>
             <TabPane tab="Hotels" key="Hotels" className="input-box">
-              <HotelSearch />
+              <HotelSearch onSearch={this.props.onSearch} />
             </TabPane>
 
             <TabPane tab="Cars" key="Cars">
